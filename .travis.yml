@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: fBsg9m5mGQDkKAqnyHSoD0aPTsgzSFpn76tG089ATjGjNwLYVQZMthX6RGvPDyT47qVuzncCHP1p8PHL9GM+vZJSOW4VI4nEppOACOZ6Kd7bm0e+P6SZzBDNVl9QsQHTh/hpyMcLIOS2m15LaPpHsiga7Hf5AYt0FEU8Qu6MgrS4v5mmp5Nhd/SeamTV/zp+noxLEOdMRB5uepL6AxSoIZLSuAN0j44b1sstmbZ/E9CXdwdlhqOJcen6LICdeWwRIDCyE26BeDzVhrsvrz9IYnvCfQFkEo8ijY/tIm7SmfvcbPwGFAx38gv7qyw9uxQUUGsJ8HaLyU6sYlGYNM8LlqJP1IjSTx2LZH/XxRj4tvBb78XDdSRosmAsPn8NNus/84mT/1y+QJyW6It5MJkJMDMk6f/HicWyI71BnKbbV0RVthQS2PI7kJZbQr4FhCs+GA71odTz36QD0Yejob51wUnpo67PZuoNOEXiAbEF54aHH9LinK/BwHew6yiW/p2JqVteS6ziZ6lDj2Twn7ts0nGqzqNOcHqutPgtivPLzGxfF3WDXWzcjNzWQSMA3aHvO/wxD5JiFnNVbL3pgFK1q9+sEsDuUbupBYvHuk/f8cn56STI1i/2ZtZCqRzFQjDLbFOYbxCCKUG/dSn4PPqDppKPHyJhmQHXh+mIiJNax1Y=
+  app: boiling-refuge-83201
+  on:
+    repo: FrancoB411/ui
